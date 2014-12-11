@@ -1,0 +1,7 @@
+development:
+  host: localhost
+  adapter: postgresql
+  encoding: unicode
+  username: root
+  password:
+  database: 2int_dev
