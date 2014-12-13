@@ -4,6 +4,7 @@
 @import url(//meyerweb.com/eric/tools/css/reset/reset.css)
 @import bootstrap-sprockets
 @import bootstrap
+@import font-awesome
 
 $dark-blue-color: #2C3E50
 $attention-color-text: #E74C3C
@@ -11,17 +12,21 @@ $common-btn-radius: 21px
 $common-link-color: #9D9D9C
 $main-enter-registration-container-color: #3498DB
 $border-radius: 5px
+$icon-color: #999999
 
 html
   font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif
+  height: 100%
 
 body
+  height: 100%
   min-width: 960px
 
 .enter-registration-header
   width: 100%
-  height: 600px
-  background-image: url('header-background.jpg')
+  height: 100%
+  background: url('header-background.jpg') no-repeat center center fixed
+  background-size: cover
 
 .text-important
   color: $attention-color-text
@@ -68,6 +73,9 @@ body
   color: white
   font-size: 36px
 
+.navigation-container
+  height: 100%
+
 .quick-start-block
   letter-spacing: 0.5px
   line-height: 1.2
@@ -82,6 +90,9 @@ body
   height: 75px
   padding: 0 5% 0 10%
   font-size: 0
+  position: absolute
+  bottom: 0
+  width: 100%
 
 .nav-links
   display: inline-block
@@ -138,6 +149,7 @@ body
 
 .form-box-wrapper
   margin: 0 auto
+  padding-bottom: 30px
   width: 80%
 
 .form-title
@@ -147,4 +159,59 @@ body
   margin: 0
 
 .form-control
+  font-size: 17px
   height: 43px
+
+.fa
+  color: $icon-color
+  font-size: 18px
+
+.btn-base-blue
+  border-color: $main-enter-registration-container-color
+  color: $main-enter-registration-container-color
+  font-size: 18px
+  font-weight: 400
+  &:hover
+    border-color: $main-enter-registration-container-color
+    background-color: $main-enter-registration-container-color
+    color: white
+
+.form-box
+  .check-box-label
+    font-weight: 400
+
+.devise-links
+  width: 100%
+  text-align: center
+  margin-top: 10px
+  font-weight: 300
+  &::first-child
+    text-align: left
+
+.devise-link
+  text-align: center
+  color: white
+  opacity: .8
+  display: inline-block
+  &:hover
+    color: white
+    opacity: 1
+  &:visited
+    color: white
+    opacity: 1
+
+.devise-link:nth-of-type(1)
+  border-right: 1px solid white
+  padding-right: 8%
+  padding-top: 0
+  height: 15px
+  line-height: 15px
+
+.devise-link:nth-of-type(2)
+  padding-left: 7%
+
+.no-border
+  border: 0 !important
+
+.btn-more-marginazed
+  margin-top: 30px

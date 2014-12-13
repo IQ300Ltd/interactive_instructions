@@ -6,4 +6,31 @@
     = javascript_include_tag 'application'
     = csrf_meta_tags
   %body
+    .navigation-container
+      .enter-registration-header
+        .quick-start-block
+          .header-logo-container
+            = image_tag('logo-with-text.png', class: "logo-with-text")
+          %p.attention-text
+            Начните создавать
+            %br/
+            простые и
+            %span.text-important понятные инструкции
+            %br/
+            прямо сейчас
+          %a.common-button-large{:href => "#"} Создать инструкцию
+      %nav.navigation-pane
+        .navigation-left-wrapper
+          .navigation-logo
+          %ul.nav-links
+            %li
+              %a.common-link.common-link-active{:href => "#"} Первый
+            %li
+              %a.common-link{:href => "#"} Второй
+            %li
+              %a.common-link{:href => "#"} Третий
+        .navigation-user-actions
+          %a.common-link{:href => "#"} Профиль
+          %a.common-link{:href => "#"} Выйти
+          %a.common-button{:href => "#"} Кнопка
     = yield
