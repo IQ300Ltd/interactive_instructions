@@ -2,6 +2,6 @@ development:
   host: localhost
   adapter: postgresql
   encoding: unicode
-  username: root
-  password:
+  username: egor
+  password: 89093137238
   database: 2int_dev

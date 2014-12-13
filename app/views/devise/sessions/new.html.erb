@@ -1,0 +1,73 @@
+<div class="navigation-container">
+  <div class="enter-registration-header">
+    <div class="quick-start-block">
+      <div class="header-logo-container">
+        <%= image_tag('logo-with-text.png', class: "logo-with-text") %>
+      </div>
+      
+      <p class="attention-text">
+        Начните создавать <br/> простые и <span class="text-important">понятные инструкции</span> <br/> прямо сейчас
+      </p>
+
+      <a href="#" class="common-button-large">Создать инструкцию</a>
+    </div>
+  </div>
+
+  <nav class="navigation-pane">
+    <div class="navigation-left-wrapper">
+      <div class="navigation-logo">
+      </div>
+      <ul class="nav-links">
+        <li>
+          <a href="#" class="common-link common-link-active">Первый</a>
+        </li>
+        <li>
+          <a href="#" class="common-link">Второй</a>
+        </li>
+        <li>
+          <a href="#" class="common-link">Третий</a>
+        </li>
+      </ul>
+    </div>
+    
+
+    <div class="navigation-user-actions">
+      <a href="#" class="common-link">Профиль</a>
+      <a href="#" class="common-link ">Выйти</a>
+      <a href="#" class="common-button">Кнопка</a>
+    </div>
+  </nav>
+</div>
+
+<div class="enter-registration-forms-container">
+  <div class="form-container">
+    <div class="form-box">
+      <div class="form-box-wrapper">
+        <h2 class='form-title'>Войдите в систему</h2>
+        <%= form_for(resource, as: resource_name, role: "form", url: session_path(resource_name)) do |f| %>
+          <div class="form-group">
+            <%= f.text_field :email, required: false, autofocus: true, class: "form-control" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.password_field :password, required: false, class: "form-control" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.check_box :remember_me, as: :boolean if devise_mapping.rememberable? %>
+            <%= f.label :remember_me%>
+          </div>
+
+          <div class="form-actions">
+            <%= f.submit "Log in" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <%= render "devise/shared/links" %>
+  </div>
+   
+</div>
+
+
+
