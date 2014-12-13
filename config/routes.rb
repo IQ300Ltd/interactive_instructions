@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   resources :instructions do
     resources :steps do
       resource :step_statistic
+      get :understand, on: :member
     end
+    get :statistic, on: :member
   end
 
   resource :user

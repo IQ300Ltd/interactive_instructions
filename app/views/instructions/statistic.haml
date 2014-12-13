@@ -1,0 +1,26 @@
+.statistic-table
+  .statistic-table-title.text-center Статистика качества просмотра инструкции
+  %table.table
+    %tr.active
+      %th.col-sm-3
+      %th.col-sm-3.text-center Просмотров
+      %th.col-sm-3.text-center Успешно просмотренных
+      %th.col-sm-3.text-center Коэффициент доступности карточки
+    - @steps.each_with_index do |step, i|
+      %tr
+        - viewed_count = step.step_statistic.viewed_count
+        - understand_count = step.step_statistic.understand_count
+        %th.text-center
+          = "Карточка #{i+1}"
+        %td.text-center
+          = viewed_count
+          - if i > 0
+            - previous_viewed_count = @steps[i-1].step_statistic.viewed_count
+            - diff_count = previous_viewed_count - viewed_count
+            - if previous_viewed_count != 0 && diff_count > 0
+              - percent = 100*diff_count/previous_viewed_count
+              %span.text-danger= "(-#{percent}%)"
+        %td.text-center
+          = understand_count
+        %td.text-center
+          = "#{100*understand_count/viewed_count}%" if viewed_count != 0
