@@ -1,0 +1,5 @@
+%h1 Instructions
+%ul#selector
+  - @instructions.each do |instruction|
+    %li
+      = link_to instruction.title, instruction_path(instruction)

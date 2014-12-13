@@ -14,9 +14,12 @@ gem 'simple_form'
 gem 'role-rails'
 gem 'haml-rails'
 gem 'bootstrap-sass', '~> 3.3.1'
+gem 'carrierwave'
+gem 'cocoon'
 
 group :development do
   gem 'better_errors'
+  gem 'binding_of_caller'
   gem 'spring'
   gem 'pry-byebug'
   gem 'pry-rails', require: false

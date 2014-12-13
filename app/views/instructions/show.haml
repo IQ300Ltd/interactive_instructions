@@ -1,0 +1,6 @@
+- @steps.each do |step|
+  %ul
+    = step.title
+    - step.sorted_attachments.each do |a|
+      %li
+        = a

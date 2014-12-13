@@ -4,4 +4,5 @@ class Instruction < ActiveRecord::Base
 
   belongs_to :user
 
+  accepts_nested_attributes_for :steps, :reject_if => :all_blank, :allow_destroy => true
 end

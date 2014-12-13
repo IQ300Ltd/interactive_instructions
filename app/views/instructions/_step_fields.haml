@@ -1,0 +1,18 @@
+.nested-fields
+  = f.input :title
+  #videos
+    = f.simple_fields_for :videos do |video|
+      = render 'video_fields', :f => video
+    .links
+      = link_to_add_association 'add video', f, :videos
+  #images
+    = f.simple_fields_for :images do |image|
+      = render 'image_fields', :f => image
+    .links
+      = link_to_add_association 'add image', f, :images
+  #texts
+    = f.simple_fields_for :texts do |text|
+      = render 'text_fields', :f => text
+    .links
+      = link_to_add_association 'add text', f, :texts
+  = link_to_remove_association "remove step", f
