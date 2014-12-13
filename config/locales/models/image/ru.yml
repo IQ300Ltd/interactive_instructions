@@ -1,0 +1,13 @@
+ru:
+  activerecord:
+    models:
+      image:
+        one: Изображение
+        other: Изображения
+        few: Изображений
+        many: Изображений
+    attributes:
+      image:
+        image_source: Ссылка на изображение
+        image_description: Описание изображения
+        position: Позиция

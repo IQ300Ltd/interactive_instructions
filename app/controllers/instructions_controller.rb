@@ -1,10 +1,12 @@
 class InstructionsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:show, :index]
+
   def index
     @instructions = Instruction.all
   end
 
   def new
-    @instruction = Instruction.new
+    @instruction = Instruction.new(user: current_user)
   end
 
   def show

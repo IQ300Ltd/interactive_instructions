@@ -1,0 +1,12 @@
+ru:
+  activerecord:
+    models:
+      step:
+        one: Шаг
+        other: Шага
+        few: Шагов
+        many: Шагов
+    attributes:
+      step:
+        title: Название
+        position: Позиция

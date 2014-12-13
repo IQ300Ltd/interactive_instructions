@@ -1,0 +1,12 @@
+ru:
+  activerecord:
+    models:
+      text:
+        one: Текст
+        other: Текстa
+        few: Текстов
+        many: Текстов
+    attributes:
+      text:
+        text_description: Описание
+        position: Позиция
