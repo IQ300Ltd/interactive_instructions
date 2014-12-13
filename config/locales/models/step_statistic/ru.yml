@@ -1,0 +1,11 @@
+ru:
+  activerecord:
+    models:
+      step_statistic:
+        one: Статистика шага
+        other: Статистики шага
+        few: Статистик шагов
+        many: Статистик шагов
+    attributes:
+      step:
+        viewed_count: Количество просмотров
