@@ -1,0 +1,12 @@
+ru:
+  activerecord:
+    models:
+      instruction:
+        one: Инструкция
+        other: Инструкции
+        few: Инструкций
+        many: Инструкций
+    attributes:
+      instruction:
+        title: Название
+        description: Описание

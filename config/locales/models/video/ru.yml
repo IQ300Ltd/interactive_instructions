@@ -1,0 +1,12 @@
+ru:
+  activerecord:
+    models:
+      video:
+        one: Видеозапись
+        other: Видеозаписи
+        few: Видеозаписей
+        many: Видеозаписей
+    attributes:
+      video:
+        video_source: Ссылка на видеозапись
+        position: Позиция

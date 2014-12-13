@@ -16,6 +16,7 @@ gem 'haml-rails'
 gem 'bootstrap-sass', '~> 3.3.1'
 gem 'carrierwave'
 gem 'cocoon'
+gem 'russian', '~> 0.6.0'
 
 group :development do
   gem 'better_errors'
