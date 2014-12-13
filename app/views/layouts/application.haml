@@ -19,18 +19,23 @@
             %br/
             прямо сейчас
           %a.common-button-large{:href => "#"} Создать инструкцию
-      %nav.navigation-pane
+      %nav.navigation-pane#navigation-pane
         .navigation-left-wrapper
           .navigation-logo
           %ul.nav-links
-            %li
-              %a.common-link.common-link-active{:href => "#"} Первый
-            %li
-              %a.common-link{:href => "#"} Второй
-            %li
-              %a.common-link{:href => "#"} Третий
+            - if current_user
+              %li
+                %a.common-link.common-link-active{:href => "#"} Первый
+              %li
+                %a.common-link{:href => "#"} Второй
+              %li
+                %a.common-link{:href => "#"} Третий
         .navigation-user-actions
-          %a.common-link{:href => "#"} Профиль
-          %a.common-link{:href => "#"} Выйти
-          %a.common-button{:href => "#"} Кнопка
-    = yield
+          - if current_user
+            %a.common-link{:href => "#"} Статистика
+            %a.common-link{:href => "#"} Профиль
+            %a.common-link{:href => "#"} Выйти
+          - else
+            = link_to 'Войти', new_user_session_path, class: "common-link"
+    #container-base  
+      = yield
