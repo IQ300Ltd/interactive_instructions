@@ -10,7 +10,7 @@ class InstructionsController < ApplicationController
   end
 
   def show
-    instruction = Instruction.find params[:id]
+    instruction = Instruction.friendly.find(params[:id])
     @steps = instruction.steps
   end
 

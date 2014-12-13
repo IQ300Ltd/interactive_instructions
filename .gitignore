@@ -29,6 +29,7 @@ vendor/assets/components
 *.DS_Store
 .powrc
 config/redis.yml
+config/database.yml
 config/certificates/*
 
 #Ignore .swp files
