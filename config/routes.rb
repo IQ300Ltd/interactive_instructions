@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   resources :instructions do
     resources :steps
   end
+
+  resource :user
 end

@@ -1,0 +1,12 @@
+ru:
+  activerecord:
+    models:
+      user:
+        one: Пользователь
+        other: Пользователя
+        few: Пользователей
+        many: Пользователей
+    attributes:
+      user:
+        first_name: Имя
+        last_name: Фамилия
