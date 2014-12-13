@@ -19,7 +19,13 @@ class InstructionsController < ApplicationController
     render json: @instruction
   end
 
+  def statistic
+    instruction = Instruction.friendly.find(params[:id])
+    @steps = instruction.steps
+  end
+
   private
+
   def instruction_params
     params.require(:instruction).permit(:title, :description,
       steps_attributes: [:id, :title, :position,
