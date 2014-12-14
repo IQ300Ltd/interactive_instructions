@@ -3,5 +3,4 @@ class Image < ActiveRecord::Base
 
   belongs_to :step
   validates :image_source, presence: true
-  validates :position, presence: true
 end

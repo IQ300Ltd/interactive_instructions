@@ -10,8 +10,6 @@ class Step < ActiveRecord::Base
 
   has_one :step_statistic
 
-  validates :position, presence: true
-
   accepts_nested_attributes_for :videos, :reject_if => :all_blank, :allow_destroy => true
   accepts_nested_attributes_for :images, :reject_if => :all_blank, :allow_destroy => true
   accepts_nested_attributes_for :texts, :reject_if => :all_blank, :allow_destroy => true
