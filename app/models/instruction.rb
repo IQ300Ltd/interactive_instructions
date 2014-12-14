@@ -5,6 +5,7 @@ class Instruction < ActiveRecord::Base
   has_many :steps
 
   belongs_to :user
+  mount_uploader :image, ImageUploader
 
   accepts_nested_attributes_for :steps, :reject_if => :all_blank, :allow_destroy => true
 

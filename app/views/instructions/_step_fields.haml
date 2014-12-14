@@ -1,18 +1,33 @@
-.nested-fields
-  = f.input :title
-  #videos
-    = f.simple_fields_for :videos do |video|
-      = render 'video_fields', :f => video
-    .links
-      = link_to_add_association 'add video', f, :videos
-  #images
-    = f.simple_fields_for :images do |image|
-      = render 'image_fields', :f => image
-    .links
-      = link_to_add_association 'add image', f, :images
-  #texts
-    = f.simple_fields_for :texts do |text|
-      = render 'text_fields', :f => text
-    .links
-      = link_to_add_association 'add text', f, :texts
-  = link_to_remove_association "remove step", f
+.icon-block.arrow-up
+.container.create-instruction-body
+  .add-media-block.step-media-block
+    .frame-body.step_image_file
+      .upload-preview
+      %span.previewTitle
+        Выберите изображение инструкции
+  %div{style: 'display: none'}
+    = f.file_field :image, class: 'step-file-field'
+  .add-text-block
+    %h2 Шаг
+    = f.text_field :title, :placeholder => "Название вашего шага"
+    %h2 Дополнительное описание к шагу
+    = f.text_area :description, :placeholder => "Краткое описание шага инструкции", :rows => "3"
+
+-# .nested-fields
+-#   = f.input :title
+-#   #videos
+-#     = f.simple_fields_for :videos do |video|
+-#       = render 'video_fields', :f => video
+-#     .links
+-#       = link_to_add_association 'add video', f, :videos
+-#   #images
+-#     = f.simple_fields_for :images do |image|
+-#       = render 'image_fields', :f => image
+-#     .links
+-#       = link_to_add_association 'add image', f, :images
+-#   #texts
+-#     = f.simple_fields_for :texts do |text|
+-#       = render 'text_fields', :f => text
+-#     .links
+-#       = link_to_add_association 'add text', f, :texts
+-#   = link_to_remove_association "remove step", f
