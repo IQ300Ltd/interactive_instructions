@@ -304,6 +304,9 @@ body
       font-family: "HelveticaNeueCyr"
       padding: 0 75px
       width: 100%
+      max-width: 100%
+      max-height: 58px
+      min-width: 100%
     input
       &.title
         font-size: 18px
@@ -378,3 +381,18 @@ body
     background-image: image-url('add-instruction.png')
   &.arrow-up
     background-image: image-url('arrow-up.png')
+    &.revers
+      transform: rotate(180deg)
+
+.view-container-instruction
+  padding-top: 75px
+  width: 900px
+  margin: 0 auto 30px auto
+  .instruction-body
+    .media-block
+      height: 330px
+      height: 330px
+    .add-text-block h2
+      font-size: 30px
+      color: #000
+      height: 135px

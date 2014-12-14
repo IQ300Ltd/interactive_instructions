@@ -5,7 +5,7 @@ class StepsController < ApplicationController
     step_statistic = @step.step_statistic
     step_statistic.viewed_count += 1
     step_statistic.save
-    render json: @step.to_json
+    render nothing: true, status: 200
   end
 
   def understand
