@@ -5,6 +5,9 @@
 //= require_tree .
 
 $(document).ready(function() {
+  var bigPreview = $('#instruction_image_file')
+  var previewTitle = $('.previewTitle')
+
   $(window).scroll(function(){
     var st = $(window).scrollTop()
     elementTop = $("#container-base").offset().top - st - 75
@@ -20,15 +23,35 @@ $(document).ready(function() {
     $('#instruction-file-field').click()
   });
 
-  var preview = $(".upload-preview img");
-    
+  $('body').on('cocoon:after-insert', function(){
+    $("html, body").animate({ scrollTop: $(document).height() }, "slow");
+    $('.step_image_file').last().on('click', function(e){
+      $('.step-file-field').last().click()
+    });
+
+    var stepBigPreview = $('.step_image_file').last();
+
+    $(".step-file-field").last().change(function(event){
+       var input = $(event.currentTarget);
+       var file = input[0].files[0];
+       var reader = new FileReader();
+       reader.onload = function(e){
+          image_base64 = e.target.result;
+          stepBigPreview.css("background-image", 'url(' +image_base64+ ')');
+          $('.previewTitle').last().remove();
+       };
+       reader.readAsDataURL(file);
+    });
+  })
+
   $("#instruction-file-field").change(function(event){
      var input = $(event.currentTarget);
      var file = input[0].files[0];
      var reader = new FileReader();
      reader.onload = function(e){
-         image_base64 = e.target.result;
-         preview.attr("src", image_base64);
+        image_base64 = e.target.result;
+        bigPreview.css("background-image", 'url(' +image_base64+ ')');
+        previewTitle.remove();
      };
      reader.readAsDataURL(file);
   });

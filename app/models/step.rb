@@ -16,6 +16,8 @@ class Step < ActiveRecord::Base
 
   after_create :create_step_statistic
 
+  mount_uploader :image, ImageUploader
+
   def sorted_attachments
     attachments = videos.to_a | images.to_a | texts.to_a
     attachments = attachments.sort_by { |obj| obj.position }

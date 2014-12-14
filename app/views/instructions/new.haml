@@ -4,7 +4,8 @@
       .add-media-block
         .frame-body#instruction_image_file
           .upload-preview
-          Выберите изображение
+          %span.previewTitle
+            Выберите изображение инструкции
       %div{style: 'display: none'}
         = f.file_field :image, id: 'instruction-file-field'
       .add-text-block
@@ -12,11 +13,14 @@
         = f.text_field :title, :placeholder => "Название вашей инструкции"
         %h2 Дополнительно (не рекомендуется)
         = f.text_area :description, :placeholder => "Краткое описание инструкции", :rows => "3"
-    .icon-block.add-instruction-body
-  %h3 Steps
-  #steps
-    = f.simple_fields_for :steps do |step|
-      = render 'step_fields', :f => step
-    .links
-      = link_to_add_association 'add step', f, :steps
+      = f.simple_fields_for :steps do |step|
+        = render 'step_fields', :f => step
+      .links
+        = link_to_add_association '#', f, :steps, class: 'icon-block add-instruction-body add-new-step-linkening'
+  -# %h3 Steps
+  -# #steps
+  -#   = f.simple_fields_for :steps do |step|
+  -#     = render 'step_fields', :f => step
+  -#   .links
+  -#     = link_to_add_association '', f, :steps
   = f.submit
