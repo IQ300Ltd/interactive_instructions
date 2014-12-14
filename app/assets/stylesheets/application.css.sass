@@ -1,7 +1,7 @@
 @import bootstrap-sprockets
 @import bootstrap
 @import instructions
-@import url(//meyerweb.com/eric/tools/css/reset/reset.css)
+@import reset
 @import font-awesome
 
 $dark-blue-color: #2C3E50
@@ -242,6 +242,8 @@ body
   z-index: 9999
   top: 0
 
+// MY STYLES END
+
 body
   background-color: #3498db
   padding-bottom: 30px
@@ -265,7 +267,7 @@ body
     color: #2980b9
     font-family: Arial, sans-serif
     text-align: center
-    background: #2c3e50 url(/images/add-media-plus.png) no-repeat center
+    background: #2c3e50 image-url('add-media-plus.png') no-repeat center
     .frame-body
       border: 1px solid #2980b9
       -webkit-border-radius: 5px 5px 5px 5px
@@ -320,7 +322,7 @@ body
     color: #2980b9
     font-family: Arial, sans-serif
     text-align: center
-    background: #2c3e50 url(/images/add-media-plus.png) no-repeat center
+    background: #2c3e50 image-url('add-media-plus.png') no-repeat center
     overflow: hidden
     img
       width: 100%
@@ -366,6 +368,6 @@ body
   margin: 30px auto 0 auto
   cursor: pointer
   &.add-instruction-body
-    background-image: url(/images/add-instruction.png)
+    background-image: image-url('add-instruction.png')
   &.arrow-up
-    background-image: url(/images/arrow-up.png)
+    background-image: image-url('arrow-up.png')

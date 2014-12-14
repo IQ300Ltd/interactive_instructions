@@ -42,7 +42,7 @@ class InstructionsController < ApplicationController
   private
 
   def instruction_params
-    params.require(:instruction).permit(:title, :description,
+    params.require(:instruction).permit(:title, :description, :image,
       steps_attributes: [:id, :title,
         videos_attributes: [:id, :video_source],
         texts_attributes: [:id, :text_description],
