@@ -5,6 +5,10 @@
 //= require_tree .
 
 $(document).ready(function() {
+  $('#create_instruction').on('click', function(){
+    $('form').first().submit()
+  });
+
   var bigPreview = $('#instruction_image_file')
   var previewTitle = $('.previewTitle')
 

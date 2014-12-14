@@ -5,10 +5,6 @@
   .modal.fade#share_link_modal{"aria-hidden" => "true", "aria-labelledby" => "mySmallModalLabel", :role => "dialog", :tabindex => "-1"}
     .modal-dialog.modal-sm-4
       .modal-content
-        .modal-header
-          %button.close{"data-dismiss" => "modal", :type => "button"}
-            %span{"aria-hidden" => "true"} ×
-          %h4#mySmallModalLabel.modal-title Ссылка на инструкцию
         .modal-body
           .form-group
             %input.form-control{ type: 'text', value: instruction_url(@instruction, token: @instruction.token) }

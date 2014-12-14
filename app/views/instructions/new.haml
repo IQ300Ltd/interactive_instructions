@@ -23,4 +23,6 @@
   -#     = render 'step_fields', :f => step
   -#   .links
   -#     = link_to_add_association '', f, :steps
-  = f.submit
+  
+= content_for :instruction_statistic_share do
+  = link_to 'Сохранить', 'javascript:void(0)', class: 'common-button-large common-button-large-no-fill', id: 'create_instruction'
