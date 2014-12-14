@@ -6,7 +6,7 @@ class InstructionsController < ApplicationController
   end
 
   def new
-    @instruction = Instruction.new(user: current_user)
+    @instruction = Instruction.new
     respond_to do |format|
       format.html
       format.json { render json: @instruction.to_json }
@@ -18,10 +18,6 @@ class InstructionsController < ApplicationController
     if current_user && current_user == @instruction.user ||
       params[:token] == @instruction.token
         @steps = @instruction.steps
-        respond_to do |format|
-          format.html
-          format.json { render json: @instruction.to_json }
-        end
     else
       redirect_to instructions_path
     end
@@ -29,9 +25,10 @@ class InstructionsController < ApplicationController
 
   def create
     @instruction = Instruction.new(instruction_params)
+    @instruction.user = current_user
     @instruction.token = SecureRandom.hex
     @instruction.save
-    render json: @instruction
+    redirect_to instruction_path(@instruction)
   end
 
   def statistic

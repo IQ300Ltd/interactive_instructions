@@ -12,10 +12,14 @@
         .modal-body
           .form-group
             %input.form-control{ type: 'text', value: instruction_url(@instruction, token: @instruction.token) }
-= @instruction.to_json
-- @steps.each do |step|
-  %ul
-    = step.title
-    - step.sorted_attachments.each do |a|
-      %li
-        = a
+
+.view-container-instruction
+  - @steps.each_with_index do |step, i|
+    .instruction-body
+      .media-block
+        = image_tag(step.image)
+      .add-text-block
+        %h2= step.title
+        %p= step.description
+    - if i+1 < @steps.count
+      .icon-block.arrow-up.revers{ role: 'step', data: { step: i, url: instruction_step_path(@instruction, step) }}
