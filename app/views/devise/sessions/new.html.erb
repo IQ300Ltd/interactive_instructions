@@ -4,6 +4,18 @@
       <div class="form-box-wrapper">
         <h2 class='form-title'>Войдите в систему</h2>
         <%= form_for(resource, as: resource_name, role: "form", url: session_path(resource_name)) do |f| %>
+          <%= flash[:errors]%>
+          <% if resource.errors.any? %>
+              <ul>
+                <% resource.errors.full_messages.each do |msg| %>
+                  <li>
+                    <div class="alert alert-danger">
+                      <%= msg %>
+                    </div>
+                  </li>
+                <% end %>
+              </ul>
+            <% end %>
           <div class="form-group">
             <div class="input-group">
               <div class="input-group-addon">

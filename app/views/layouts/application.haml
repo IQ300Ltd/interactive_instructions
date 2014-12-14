@@ -18,7 +18,7 @@
             %span.text-important понятные инструкции
             %br/
             прямо сейчас
-          %a.common-button-large{:href => "#"} Создать инструкцию
+          = link_to 'Создать инструкцию', new_instruction_path, class: 'common-button-large'
       %nav.navigation-pane#navigation-pane
         .navigation-left-wrapper
           .navigation-logo
@@ -34,7 +34,7 @@
           - if current_user
             %a.common-link{:href => "#"} Статистика
             %a.common-link{:href => "#"} Профиль
-            %a.common-link{:href => "#"} Выйти
+            = link_to 'Выйти', destroy_user_session_path, class: 'common-link', method: :delete
           - else
             = link_to 'Войти', new_user_session_path, class: "common-link"
     #container-base  
