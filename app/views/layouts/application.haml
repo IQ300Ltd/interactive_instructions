@@ -6,36 +6,44 @@
     = javascript_include_tag 'application'
     = csrf_meta_tags
   %body
-    .navigation-container
-      .enter-registration-header
-        .quick-start-block
-          .header-logo-container
-            = image_tag('logo-with-text.png', class: "logo-with-text")
-          %p.attention-text
-            Начните создавать
-            %br/
-            простые и
-            %span.text-important понятные инструкции
-            %br/
-            прямо сейчас
-          = link_to 'Создать инструкцию', new_instruction_path, class: 'common-button-large'
-      %nav.navigation-pane#navigation-pane
+    - if current_user || params[:token].present?
+      %nav.navigation-pane#navigation-pane.navigation-fixed
         .navigation-left-wrapper
           .navigation-logo
-          %ul.nav-links
+        - if content_for?(:instruction_statistic_share) && current_user
+          = yield(:instruction_statistic_share)
+        - unless params[:token].present?
+          .navigation-user-actions
             - if current_user
-              %li
-                %a.common-link.common-link-active{:href => "#"} Первый
-              %li
-                %a.common-link{:href => "#"} Второй
-              %li
-                %a.common-link{:href => "#"} Третий
-        .navigation-user-actions
-          - if current_user
-            %a.common-link{:href => "#"} Статистика
-            %a.common-link{:href => "#"} Профиль
-            = link_to 'Выйти', destroy_user_session_path, class: 'common-link', method: :delete
-          - else
-            = link_to 'Войти', new_user_session_path, class: "common-link"
-    #container-base  
+              - if content_for?(:instruction_statistic)
+                = yield(:instruction_statistic)
+              = link_to 'Выйти', destroy_user_session_path, class: 'common-link', method: :delete
+            - else
+              = link_to 'Войти', new_user_session_path, class: "common-link"
+    - else
+      .navigation-container
+        .enter-registration-header
+          .quick-start-block
+            .header-logo-container
+              = image_tag('logo-with-text.png', class: "logo-with-text")
+            %p.attention-text
+              Начните создавать
+              %br/
+              простые и
+              %span.text-important понятные инструкции
+              %br/
+              прямо сейчас
+            = link_to 'Создать инструкцию', new_instruction_path, class: 'common-button-large'
+        %nav.navigation-pane#navigation-pane
+          .navigation-left-wrapper
+            .navigation-logo
+            %ul.nav-links
+          .navigation-user-actions
+            - if current_user
+              - if content_for?(:instruction_statistic)
+                = yield(:instruction_statistic)
+              = link_to 'Выйти', destroy_user_session_path, class: 'common-link', method: :delete
+            - else
+              = link_to 'Войти', new_user_session_path, class: "common-link"
+    .main-container#container-base
       = yield
