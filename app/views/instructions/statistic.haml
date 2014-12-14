@@ -1,6 +1,8 @@
 .statistic-table
-  .statistic-table-title.text-center Статистика качества просмотра инструкции
-  %table.table
+  .statistic-table-title.text-center
+    Статистика качества просмотра
+    = link_to 'инструкции', instructions_path(@instruction), class: 'link-to-instruction'
+  %table.table.statistic-table-data
     %tr.active
       %th.col-sm-3
       %th.col-sm-3.text-center Просмотров

@@ -10,9 +10,9 @@ $(document).ready(function() {
     elementTop = $("#container-base").offset().top - st - 75
 
     if(elementTop <= 0){
-      $("#navigation-pane").addClass('navigation-fixed');
+      $(".navigation-container #navigation-pane").addClass('navigation-fixed');
     }else{
-      $("#navigation-pane").removeClass('navigation-fixed');
+      $(".navigation-container #navigation-pane").removeClass('navigation-fixed');
     }
   })
 });

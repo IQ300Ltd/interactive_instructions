@@ -1,3 +1,17 @@
+= content_for :instruction_statistic do
+  = link_to 'Статистика', statistic_instruction_path(@instruction), class: 'common-link'
+= content_for :instruction_statistic_share do
+  = link_to 'Поделиться', '#', class: 'common-button-large common-button-large-no-fill', 'data-toggle' => 'modal', 'data-target' => '#share_link_modal'
+  .modal.fade#share_link_modal{"aria-hidden" => "true", "aria-labelledby" => "mySmallModalLabel", :role => "dialog", :tabindex => "-1"}
+    .modal-dialog.modal-sm-4
+      .modal-content
+        .modal-header
+          %button.close{"data-dismiss" => "modal", :type => "button"}
+            %span{"aria-hidden" => "true"} ×
+          %h4#mySmallModalLabel.modal-title Ссылка на инструкцию
+        .modal-body
+          .form-group
+            %input.form-control{ type: 'text', value: instruction_url(@instruction, token: @instruction.token) }
 = @instruction.to_json
 - @steps.each do |step|
   %ul
