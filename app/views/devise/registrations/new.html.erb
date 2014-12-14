@@ -1,0 +1,38 @@
+<div class="container-base" id="container-base">
+  <div class="enter-registration-forms-container">
+    <div class="form-container">
+      <div class="form-box">
+        <div class="form-box-wrapper">
+          <h2 class='form-title'>Несколько секунд <br/> на регистрацию</h2>
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <div class="form-group">
+              <div class="input-group">
+                <div class="input-group-addon">
+                  <%= fa_icon 'envelope'%>
+                </div>
+                <%= f.text_field :email, required: false, autofocus: true, class: "form-control", placeholder: 'Email' %>
+              </div>
+              
+            </div>
+
+            <div class="form-group">
+              <div class="input-group">
+                <div class="input-group-addon">
+                  <%= fa_icon 'asterisk'%>
+                </div>
+                <%= f.password_field :password, required: false, class: "form-control", placeholder: 'Пароль' %>
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <%= f.submit "Зарегистрироваться", class: "btn btn-default btn-block btn-base-blue btn-more-marginazed" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <%= render "devise/shared/links" %>
+    </div>
+    <div style="height: 700px;"></div>
+  </div>
+</div>
+

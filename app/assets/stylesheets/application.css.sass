@@ -1,3 +1,228 @@
 @import bootstrap-sprockets
 @import bootstrap
 @import instructions
+@import url(//meyerweb.com/eric/tools/css/reset/reset.css)
+@import bootstrap-sprockets
+@import bootstrap
+@import font-awesome
+
+$dark-blue-color: #2C3E50
+$attention-color-text: #E74C3C
+$common-btn-radius: 21px
+$common-link-color: #9D9D9C
+$main-enter-registration-container-color: #3498DB
+$border-radius: 5px
+$icon-color: #999999
+
+html
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif
+  height: 100%
+  overflow-y:hidden
+
+body
+  height: 100%
+  min-width: 960px
+  overflow-y:hidden
+
+.enter-registration-header
+  width: 100%
+  height: 100%
+  background: url('header-background.jpg') no-repeat center center fixed
+  background-size: cover
+
+.text-important
+  color: $attention-color-text
+
+.header-logo-container
+  padding-top: 70px
+  padding-bottom: 60px
+
+.logo-with-text
+  width: 150px
+
+.common-button-large
+  color: white
+  text-transform: uppercase
+  font-size: 15px
+  text-decoration: none
+  display: inline-block
+  padding: 10px 20px
+  margin-top: 20px
+  background-color: $attention-color-text
+  border-radius: $common-btn-radius
+  &:hover
+    color: white
+    text-decoration: none
+
+.common-button
+  color: white
+  text-transform: uppercase
+  font-size: 12px
+  text-decoration: none
+  display: inline-block
+  padding: 10px 20px
+  background-color: $attention-color-text
+  border-radius: $common-btn-radius
+  &:hover
+    color: white
+    text-decoration: none
+
+.navigation-user-actions
+  .common-link
+    margin-right: 20px
+
+.attention-text
+  color: white
+  font-size: 36px
+
+.navigation-container
+  height: 100%
+
+.quick-start-block
+  letter-spacing: 0.5px
+  line-height: 1.2
+  margin: 0 auto
+  width: 60%
+  text-align: center
+
+.navigation-pane
+  box-sizing: border-box
+  background-color: $dark-blue-color
+  display: block
+  height: 75px
+  padding: 0 5% 0 10%
+  font-size: 0
+  position: absolute
+  bottom: 0
+  width: 100%
+
+.nav-links
+  display: inline-block
+  margin: 0 auto
+  line-height: 75px
+  li
+    display: inline-block
+    margin-right: 45px
+
+.common-link
+  color: $common-link-color
+  font-size: 14px
+  text-transform: uppercase
+  &:hover
+    color: white
+    text-decoration: none
+
+.common-link-active
+  color: white
+
+.navigation-user-actions
+  display: inline-block
+  width: 30%
+  text-align: right
+  font-size: 14px
+
+.navigation-left-wrapper
+  width: 70%
+  display: inline-block
+  height: inherit
+
+.small-logo-with-text
+  padding: 0
+
+.navigation-logo
+  display: inline-block
+  vertical-align: middle
+  background: url('small-opacity-logo-with-text.png') no-repeat center 8px
+  background-size: 100%
+  height: inherit
+  width: 100px
+  margin-right: 50px
+
+.enter-registration-forms-container
+  background-color: $main-enter-registration-container-color
+  width: 100%
+  padding: 150px 0
+  height: 100%
+
+.form-container
+  margin: 0 auto
+  width: 320px
+  display: block
+
+.form-box
+  border-radius: $border-radius
+  background-color: white
+
+.form-box-wrapper
+  margin: 0 auto
+  padding-bottom: 30px
+  width: 80%
+
+.form-title
+  padding: 30px 0
+  font-size: 16px
+  text-align: center
+  margin: 0
+
+.form-control
+  font-size: 17px
+  height: 43px
+
+.fa
+  color: $icon-color
+  font-size: 18px
+
+.btn-base-blue
+  border-color: $main-enter-registration-container-color
+  color: $main-enter-registration-container-color
+  font-size: 18px
+  font-weight: 400
+  &:hover
+    border-color: $main-enter-registration-container-color
+    background-color: $main-enter-registration-container-color
+    color: white
+
+.form-box
+  .check-box-label
+    font-weight: 400
+
+.devise-links
+  width: 100%
+  text-align: center
+  margin-top: 10px
+  font-weight: 300
+  &::first-child
+    text-align: left
+
+.devise-link
+  text-align: center
+  color: white
+  opacity: .8
+  display: inline-block
+  &:hover
+    color: white
+    opacity: 1
+  &:visited
+    color: white
+    opacity: 1
+
+.devise-link:nth-of-type(1)
+  border-right: 1px solid white
+  padding-right: 8%
+  padding-top: 0
+  height: 15px
+  line-height: 15px
+
+.devise-link:nth-of-type(2)
+  padding-left: 7%
+
+.no-border
+  border: 0 !important
+
+.btn-more-marginazed
+  margin-top: 30px
+
+.navigation-fixed
+  position: fixed
+  z-index: 9999
+  top: 0

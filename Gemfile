@@ -18,6 +18,7 @@ gem 'carrierwave'
 gem 'cocoon'
 gem 'russian', '~> 0.6.0'
 gem 'friendly_id', '~> 5.0.0'
+gem "font-awesome-rails"
 
 group :development do
   gem 'better_errors'
